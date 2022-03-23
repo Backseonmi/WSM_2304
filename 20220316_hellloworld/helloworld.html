@@ -5,6 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> //문서의 정보
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> //문서의 정보
     <title>헬로, 월드!</title>
+    <style>
+        /* 우선순위: 포괄<구체*/
+        /* 우선순위: class < id <<<!important */
+        /* 우선순위: 같은 급일 때, 위 < 아래 코드*/
+        body{
+            color: gray;
+        }
+        li{
+            color: teal;
+        }
+        #leader{
+            color:gold;
+        }
+        .korea{
+            color: crimson !important; /* '콤마' 안쓰고 '띄어쓰기' 사용 */
+        }
+        .inchon{
+            color: darkblue;
+        }
+    </style>
 </head>
 <body>
     <ul>
