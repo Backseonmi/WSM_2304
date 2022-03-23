@@ -1,0 +1,18 @@
+/* 우선순위: 포괄<구체*/
+/* 우선순위: class < id <<<!important */
+/* 우선순위: 같은 급일 때, 위 < 아래 코드*/
+body{
+    color: gray;
+}
+li{
+    color: teal;
+}
+#leader{
+    color:gold;
+}
+.korea{
+    color: crimson !important; /* '콤마' 안쓰고 '띄어쓰기' 사용 */
+}
+.inchon{
+    color: darkblue;
+}
