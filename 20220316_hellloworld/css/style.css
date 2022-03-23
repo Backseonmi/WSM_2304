@@ -4,7 +4,11 @@
 body{
     color: gray;
 }
-li{
+body > ul > li{
+    color: green;
+}
+body li, h6{
+    /* 자식: >, 자손: 띄어쓰기 */
     color: teal;
 }
 #leader{
@@ -15,4 +19,20 @@ li{
 }
 .inchon{
     color: darkblue;
+}
+h1+h2{
+    /* 마주하는 첫째 자매 */
+    background-color: skyblue;
+}
+h2~h3{
+    /* 마주하는 모든 자매 */
+    background-color: aqua;
+}
+li:nth-child(2){
+    /* n번째 자식 선택하는 문구 */
+    text-decoration: underline;
+}
+[type="password"] {
+    /* HTML태그 속성="값" */
+    background-color: chocolate;
 }
