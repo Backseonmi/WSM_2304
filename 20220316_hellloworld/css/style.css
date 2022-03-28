@@ -1,38 +1,42 @@
 /* 우선순위: 포괄<구체*/
 /* 우선순위: class < id <<<!important */
 /* 우선순위: 같은 급일 때, 위 < 아래 코드*/
-body{
-    color: gray;
+body {
+  color: gray;
 }
-body > ul > li{
-    color: green;
+body > ul > li {
+  color: green;
 }
-body li, h6{
-    /* 자식: >, 자손: 띄어쓰기 */
-    color: teal;
+body li,
+h6 {
+  /* 자식: >, 자손: 띄어쓰기 */
+  color: teal;
 }
-#leader{
-    color:gold;
+#leader {
+  color: gold;
 }
-.korea{
-    color: crimson !important; /* '콤마' 안쓰고 '띄어쓰기' 사용 */
+.korea {
+  color: crimson !important; /* '콤마' 안쓰고 '띄어쓰기' 사용 */
 }
-.inchon{
-    color: darkblue;
+.inchon {
+  color: darkblue;
 }
-h1+h2{
-    /* 마주하는 첫째 자매 */
-    background-color: skyblue;
+h1 + h2 {
+  /* 마주하는 첫째 자매 */
+  background-color: skyblue;
 }
-h2~h3{
-    /* 마주하는 모든 자매 */
-    background-color: aqua;
+h2 ~ h3 {
+  /* 마주하는 모든 자매 */
+  background-color: aqua;
 }
-li:nth-child(2){
-    /* n번째 자식 선택하는 문구 */
-    text-decoration: underline;
+body > ul > ul:nth-child(4) > li:nth-child(2) {
+  /* nth-child(n): n번째 자식 선택하는 문구 */
+  /* first-child: 첫째 */
+  /* last-child: 막내 */
+  text-decoration: underline;
 }
 [type="password"] {
-    /* HTML태그 속성="값" */
-    background-color: chocolate;
+  /* HTML태그 속성="값" */
+  /* <input type = "password" name ="" id ="">을 가리킨 것 */
+  background-color: chocolate;
 }
