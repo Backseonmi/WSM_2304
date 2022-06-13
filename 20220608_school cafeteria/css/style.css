@@ -80,9 +80,16 @@ nav{
 nav a{
     color:#fff;
 }
+.nav-toggle{
+    display:none;
+    /* visibility: hidden; 보이지는 않지만, 자리는 차지함 */
+}
+.nav-toggle i{
+    color: #fff;
+}
 .nav-list{
     display:flex;
-    column-gap: 0.75rem;  /*12px;*/
+    column-gap: 0.75rem;  /*=12px;*/
 }
 
 
