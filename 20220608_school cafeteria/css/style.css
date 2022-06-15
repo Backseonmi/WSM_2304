@@ -121,10 +121,15 @@ nav a{
         top: 44px; /* nav 높이 */
         /* width: 100%; */
         background-color: #2f2f2f;
+        height: 0; /* overflow: hidden과 함께 메뉴 안 보이게 하자 */
+        overflow: hidden;
     }
     .nav-item{
         padding: 0.5rem 0;
         border-bottom: 1px solid #fff;
         text-align: center;  /* 글자 가운데 정렬 */
+    }
+    .show-menu{
+        height: 164px;
     }
 }
