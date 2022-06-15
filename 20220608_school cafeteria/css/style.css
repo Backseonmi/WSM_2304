@@ -123,6 +123,7 @@ nav a{
         background-color: #2f2f2f;
         height: 0; /* overflow: hidden과 함께 메뉴 안 보이게 하자 */
         overflow: hidden;
+        transition: 0.5s;
     }
     .nav-item{
         padding: 0.5rem 0;
