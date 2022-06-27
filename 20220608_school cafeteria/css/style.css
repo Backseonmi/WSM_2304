@@ -7,8 +7,8 @@
     --first-color: hsl(160, 100%, 25%);
     --first-color-bright: hsl(160, 100%, 40%);
     --second-color: hsl(339,77%, 59%);
-    --third_color: hsl(42,87%, 52%);
-    --title_color: hsl(160, 0%, 0%);
+    --third-color: hsl(42,87%, 52%);
+    --title-color: hsl(160, 0%, 0%);
     --text-color: hsl(160, 0%, 47%);
     --body-color: #fff;
     --container-color: #fff;
@@ -99,6 +99,9 @@ nav a{
 }
 
 /*HOME*/
+h3{
+    font-size: var(--h3-cont-size);
+}
 main{
     display: flex;
     justify-content: center;
@@ -115,6 +118,12 @@ main{
     flex-basis: 240px; */
     flex: 1 0 240px; /*기본 240px이고 커지면 확장하자*/
     max-width: 300px; /*너무 넓지 않게 max 정하자*/
+}
+.card:hover{
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card:hover .card-time{
+    color: var(--third-color);
 }
 .card-image{
     height: 0;
