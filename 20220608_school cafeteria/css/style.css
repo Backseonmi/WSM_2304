@@ -71,6 +71,7 @@ img{
 header{
     background-color: var(--first-color);
 }
+
 nav{
     height: 44px;
     display: flex;
@@ -119,11 +120,15 @@ main{
     flex: 1 0 240px; /*기본 240px이고 커지면 확장하자*/
     max-width: 300px; /*너무 넓지 않게 max 정하자*/
 }
+.now,
 .card:hover{
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* transition: 1s; */
 }
+.now .card-time,
 .card:hover .card-time{
     color: var(--third-color);
+    /* transition: 1s; */
 }
 .card-image{
     height: 0;
