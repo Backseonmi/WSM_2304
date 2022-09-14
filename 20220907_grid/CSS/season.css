@@ -1,0 +1,27 @@
+.grid-container{
+    display: grid;
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: 30% 70%;
+    max-width: 800px;
+    height: 600px;
+    font-size: 3em;
+}
+.grid-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid-item:nth-child(1){
+    background-color: lightpink;
+}
+.grid-item:nth-child(2){
+    background-color: aquamarine;
+}
+.grid-item:nth-child(3){
+    background-color: sandybrown;
+    color: white;
+}
+.grid-item:nth-child(4){
+    background-color: lightgray;
+    color: white;
+}
