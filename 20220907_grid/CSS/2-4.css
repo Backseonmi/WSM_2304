@@ -1,53 +1,93 @@
-h1{
-    max-width: 800px;
+h1 {
     text-align: center;
-    padding: 20px;
+    max-width: 600px;
+    color: black;
+    padding: 30px;
+    font-size: 2rem;
 }
-.grid-container{
+
+.grid-container {
     display: grid;
-    grid-template-columns: 80px repeat(5, 1fr);
-    max-width: 800px;
-    height: 400px;
-}
-.days-of-the-week{
-    background-color: skyblue;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 40px repeat(7, 1fr);
+    max-width: 700px;
+    height: 500px;
     color: black;
 }
-.grid-item{
-    justify-content: center;
-    display: flex;
-    align-items: center;
+
+.grid-item {
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
-.grid-item:nth-child(9){
+
+.days-of-the-week {
+    color: black;
+    background-color: lightsteelblue;
+}
+
+.period {
+    color: black;
+}
+
+.grid-item:nth-child(9) {
     grid-row-start: 2;
     grid-row-end: 4;
     grid-column-start: 3;
     grid-column-end: 4;
 }
-.grid-item:nth-child(11){
-    grid-row: 2/4;
-    grid-column: 5/6;
+
+.grid-item:nth-child(11) {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 5;
+    grid-column-end: 6;
 }
-.grid-item:nth-child(18){
-    grid-area: 4 / 2/ 6 /3;
+
+.grid-item:nth-child(18) {
+    grid-row-start: 4;
+    grid-row-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
-.grid-item:nth-child(20){
-    grid-area: 4 / 4 / 6 / 5;
+
+.grid-item:nth-child(20) {
+    grid-row-start: 4;
+    grid-row-end: 6;
+    grid-column-start: 4;
+    grid-column-end: 5;
 }
-.grid-item:nth-child(31){
-    grid-area: 6 / 5 / 8 / 6;
+
+.grid-item:nth-child(31) {
+    grid-row-start: 6;
+    grid-row-end: 8;
+    grid-column-start: 5;
+    grid-column-end: 6;
 }
-.grid-item:nth-child(32){
-    grid-area: 6 / 6 / 8 / 7;
+
+.grid-item:nth-child(32) {
+    grid-row-start: 6;
+    grid-row-end: 8;
+    grid-column-start: 6;
+    grid-column-end: 7;
 }
-.grid-item:nth-child(35){
-    grid-area: 7 / 3 / 9 / 4;
+
+.grid-item:nth-child(35) {
+    grid-row-start: 7;
+    grid-row-end: 9;
+    grid-column-start: 3;
+    grid-column-end: 4;
 }
-.grid-item:nth-child(36){
-    grid-area: 7 / 4 / 9 / 5;
+
+.grid-item:nth-child(36) {
+    grid-row-start: 7;
+    grid-row-end: 9;
+    grid-column-start: 4;
+    grid-column-end: 5;
 }
-.blank{
-    background-color: goldenrod;
+
+.grid-item:nth-child(38), .grid-item:nth-child(40) {
+    background-color: darkgoldenrod;
 }
