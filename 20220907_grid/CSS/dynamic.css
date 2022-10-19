@@ -2,7 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 20px
+    column-gap: 20px;
+    max-width: 800px;
 }
 
 #prev_btn,
