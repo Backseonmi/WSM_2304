@@ -90,6 +90,10 @@ const initButton = () => {
 initButton();
 
 //급식 API, AJAX 급식데이터 가져오기
+//.date-grid-container > .grid-item에 mouseover 이벤트 발생하면, handler를 지정하기
+//handler에서 year, month, date 정보를 가져와서 url 생성하기
+//AJAX(Asynchronous JavaScript And XML)로 url 호출하기
+//응답 오면, #breakfast, #lunch, #dinner에 출력하기
 const KEY  = "531661bf0bd04c158cbf3b61dc03a521";
 //console.log(KEY);
 const ATPT_OFCDC_SC_CODE = "B10"; //서울특별시교육청
