@@ -95,7 +95,7 @@ const handler = (event) => {
     //handler에서 year, month, date 정보를 가져와서 url 생성하기
     //console.log("click");
     let date = event.target.innerHTML;
-    const KEY  = "377ed98d04c94ea089f4463be2eb5e9d";
+    const KEY  = "377ed98d04c94ea089f4463be2eb5e9d"; //급식 api를 받는 곳인 '나이스 교육정보 개방 포털'에 학교 계정으로 로그인해서 발급받은 인증키(탈퇴하면 사용할 수 없어짐)
     //console.log(KEY);
     const ATPT_OFCDC_SC_CODE = "B10";       //서울특별시교육청
     const SD_SCHUL_CODE = "7010569";        //미림여자정보과학고등학교
@@ -106,7 +106,7 @@ const handler = (event) => {
     url += `&ATPT_OFCDC_SC_CODE=${ATPT_OFCDC_SC_CODE}`;
     url += `&SD_SCHUL_CODE=${SD_SCHUL_CODE}`;
     url += `&MLSV_YMD=${MLSV_YMD}`;
-    console.log(url);
+    // console.log(url);
     getMenuByAPI(url);
 }
 
@@ -120,7 +120,8 @@ const getMenuByAPI = (url) => {
         if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200){
             //success
             console.log("성공");
-            console.log(xhr.response);
+            // console.log(xhr.response);
+            showMenu(xhr.response);
         }else{
             //fail
             //console.log("실패", xhr.status);
@@ -133,6 +134,37 @@ const getMenuByAPI = (url) => {
     //요청 전송하기
     xhr.send();
     
+}
+
+const showMenu = (jsonString) => {
+    // console.log(jsonString);
+    //jsonString -> json
+    let json = JSON.parse(jsonString); //JSON.stringify(): json -> String
+    // console.log(json);
+
+    //json -> 조식, 중식, 석식
+    let breakfastMenu = "없음"
+    let lunchMenu = "없음"
+    let dinnerMenu = "없음"
+
+    try{
+        breakfastMenu = json["mealServiceDietInfo"][1]["row"][0]["DDISH_NM"];
+    }catch{
+    }
+    try{
+        lunchMenu = json["mealServiceDietInfo"][1]["row"][1]["DDISH_NM"];
+    }catch{
+    }
+    try{
+        dinnerMenu = json["mealServiceDietInfo"][1]["row"][2]["DDISH_NM"];
+    }
+    catch{
+    }
+    
+    //조식, 중식, 석식 -> HTML
+    breakfast.innerHTML = breakfastMenu;
+    lunch.innerHTML = lunchMenu;
+    dinner.innerHTML = dinnerMenu;
 }
 
 //응답 오면, #breakfast, #lunch, #dinner에 출력하기
