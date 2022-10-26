@@ -162,12 +162,12 @@ const showMenu = (jsonString) => {
     }
     
     //조식, 중식, 석식 -> HTML
+    //응답 오면, #breakfast, #lunch, #dinner에 출력하기
     breakfast.innerHTML = breakfastMenu;
     lunch.innerHTML = lunchMenu;
     dinner.innerHTML = dinnerMenu;
 }
 
-//응답 오면, #breakfast, #lunch, #dinner에 출력하기
 let dateGridContainerDiv = document.getElementsByClassName("date-grid-container")[0];
 let gridItems = dateGridContainerDiv.getElementsByClassName("grid-item");
 
@@ -175,6 +175,6 @@ for(let gridItem of gridItems){
     //console.log(gridItem);
     //gridItem.onclick = console.log("click") //실행한 결과를 onclick에 넣는 것
     //gridItem.onclick = () => {console.log("click")} //onclick을 했을때 실행되고 return하는 것
-    gridItem.onclick = handler;
+    gridItem.onmouseover = handler; //mouseover일 때, 이벤트 처리하기
 }
 
