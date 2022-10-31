@@ -149,14 +149,21 @@ const showMenu = (jsonString) => {
 
     try{
         breakfastMenu = json["mealServiceDietInfo"][1]["row"][0]["DDISH_NM"];
+        //(5.13.) 삭제
+        //괄호 열고, 숫자, 점 여러개 괄호 닫고
+        breakfastMenu = breakfastMenu.replace(/\([0123456789\.]+\)/g, ""); //점문자를 사용하여 (5.13.)을 빈칸으로 대체하여 삭제하는 방법
+
     }catch{
     }
     try{
         lunchMenu = json["mealServiceDietInfo"][1]["row"][1]["DDISH_NM"];
+        //lunchMenu = lunchMenu.replace("배추", "");
+        lunchMenu = lunchMenu.replace(/\([0-9\.]+\)/g, ""); //0123456789 == 0-9
     }catch{
     }
     try{
         dinnerMenu = json["mealServiceDietInfo"][1]["row"][2]["DDISH_NM"];
+        dinnerMenu = dinnerMenu.replace(/\([\d\.]+\)/g, ""); //0123456789 == \d
     }
     catch{
     }
