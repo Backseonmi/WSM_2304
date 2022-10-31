@@ -54,3 +54,36 @@ const addNow = (mainCardId) => {
     selectedCard.classList.add('now');
   }
   addNow('main-card');
+
+  //오늘의 급식 메뉴 표시하기
+  const showTodayMenu = () => {
+    //년, 월, 일 구하기
+    let now = new Date();
+    let year = now.getFullYear();
+    let month = now.getMonth() + 1;
+    let date = now.getDate();
+    let day = now.getDay();
+    
+    //급식 API rul 만들기
+    const KEY  = "377ed98d04c94ea089f4463be2eb5e9d"; //급식 api를 받는 곳인 '나이스 교육정보 개방 포털'에 학교 계정으로 로그인해서 발급받은 인증키(탈퇴하면 사용할 수 없어짐)
+    //console.log(KEY);
+    const ATPT_OFCDC_SC_CODE = "B10";       //서울특별시교육청
+    const SD_SCHUL_CODE = "7010569";        //미림여자정보과학고등학교
+    let MLSV_YMD = `${year}${month.toString().padStart(2, "0")}${date.toString().padStart(2, "0")}`;
+    let url = `https://open.neis.go.kr/hub/mealServiceDietInfo`;
+    url += `?KEY=${KEY}`;
+    url += `&Type=json`;
+    url += `&ATPT_OFCDC_SC_CODE=${ATPT_OFCDC_SC_CODE}`;
+    url += `&SD_SCHUL_CODE=${SD_SCHUL_CODE}`;
+    url += `&MLSV_YMD=${MLSV_YMD}`;
+    //console.log(url);
+
+    //비동기로 호출하기
+    
+    //응답오면 표시하기
+    fetch(url).then((response) => response.json()).then((json) => console.log(json));
+    
+    
+
+  }
+  showTodayMenu();
