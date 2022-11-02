@@ -55,6 +55,44 @@ const addNow = (mainCardId) => {
   }
   addNow('main-card');
 
+  const showMenu = (json) => {
+    //json -> 조식, 중식, 석식
+    let breakfastMenu = "없음"
+    let lunchMenu = "없음"
+    let dinnerMenu = "없음"
+
+    try{
+        breakfastMenu = json["mealServiceDietInfo"][1]["row"][0]["DDISH_NM"];
+        //(5.13.) 삭제
+        //괄호 열고, 숫자, 점 여러개 괄호 닫고
+        breakfastMenu = breakfastMenu.replace(/\([0123456789\.]+\)/g, ""); //점문자를 사용하여 (5.13.)을 빈칸으로 대체하여 삭제하는 방법
+
+    }catch{
+    }
+    try{
+        lunchMenu = json["mealServiceDietInfo"][1]["row"][1]["DDISH_NM"];
+        //lunchMenu = lunchMenu.replace("배추", "");
+        lunchMenu = lunchMenu.replace(/\([0-9\.]+\)/g, ""); //0123456789 == 0-9
+    }catch{
+    }
+    try{
+        dinnerMenu = json["mealServiceDietInfo"][1]["row"][2]["DDISH_NM"];
+        dinnerMenu = dinnerMenu.replace(/\([\d\.]+\)/g, ""); //0123456789 == \d
+    }
+    catch{
+    }
+    
+    //조식, 중식, 석식 -> HTML
+    //응답 오면, #breakfast, #lunch, #dinner에 출력하기
+    let menus = document.querySelectorAll(".card-menu");
+    let breakfast = menus[0];
+    let lunch = menus[1];
+    let dinner = menus[2];
+    breakfast.innerHTML = breakfastMenu;
+    lunch.innerHTML = lunchMenu;
+    dinner.innerHTML = dinnerMenu;
+}
+
   //오늘의 급식 메뉴 표시하기
   const showTodayMenu = () => {
     //년, 월, 일 구하기
@@ -79,11 +117,10 @@ const addNow = (mainCardId) => {
     //console.log(url);
 
     //비동기로 호출하기
-    
     //응답오면 표시하기
-    fetch(url).then((response) => response.json()).then((json) => console.log(json));
-    
-    
+    fetch(url)    //비동기 호출
+    .then((response) => response.json())    //응답데이터 -> json
+    .then((json) => showMenu(json));     //json -> HTML에 표시하기
+  };
 
-  }
   showTodayMenu();

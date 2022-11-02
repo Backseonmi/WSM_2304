@@ -184,4 +184,8 @@ const showMenu = (jsonString) => {
 
 let dateGridContainerDiv = document.getElementsByClassName("date-grid-container")[0];
 let gridItems = dateGridContainerDiv.getElementsByClassName("grid-item");
+for (let gridItem of gridItems) {
+    // console.log(gridItem);
+    gridItem.onmouseover = handler; //mouseover일 때, 이벤트 처리하기
+}
 
