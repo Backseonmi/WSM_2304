@@ -1,18 +1,45 @@
+.grid-container{
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    "nav main side-a"
+    "footer main side-a";   /*표 만들기(병합)*/
+    grid-template-columns: 100px 3fr 1fr;
+}
+
 header{
     border: 1px solid gray;
+}
+.header{
+    grid-area: header;
 }
 nav{
     border: 1px solid gray;
 }
+.nav{
+    grid-area: nav;
+}
 aside{
     border: 1px solid gray;
 }
+.side-a{
+    grid-area: side-a;
+}
+.side-b{
+    display: none;
+}
 main{
     border: 1px solid gray;
+}
+.main{
+    grid-area: main;
 }
 header{
     border: 1px solid gray;
 }
 footer{
     border: 1px solid gray;
+}
+.footer{
+    grid-area: footer;
 }
